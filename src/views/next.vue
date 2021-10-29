@@ -25,6 +25,7 @@
       type="playlist"
       :highlight-playing-track="false"
       dbclick-track-func="playTrackOnListByID"
+      :extra-context-menu-item="['removeTrackFormNext']"
     />
   </div>
 </template>

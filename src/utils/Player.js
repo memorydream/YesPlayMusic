@@ -628,4 +628,11 @@ export default class {
   removeTrackFromQueue(index) {
     this._playNextList.splice(index, 1);
   }
+  removeTrackFormNext(id) {
+    let list = this._shuffle ? this._shuffledList : this._list;
+    let index = list.findIndex(e => e === id);
+    if (index > -1) {
+      list.splice(index, 1);
+    }
+  }
 }

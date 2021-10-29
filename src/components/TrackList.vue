@@ -19,6 +19,12 @@
         @click="removeTrackFromQueue"
         >从队列删除</div
       >
+      <div
+        v-if="extraContextMenuItem.includes('removeTrackFormNext')"
+        class="item"
+        @click="removeTrackFormNext"
+        >从播放列表中删除</div
+      >
       <hr v-show="type !== 'cloudDisk'" />
       <div
         v-show="!isRightClickedTrackLiked && type !== 'cloudDisk'"
@@ -286,6 +292,9 @@ export default {
           });
         });
       }
+    },
+    removeTrackFormNext() {
+      this.$store.state.player.removeTrackFormNext(this.rightClickedTrack.id);
     },
   },
 };
